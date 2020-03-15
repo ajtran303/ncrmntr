@@ -1,6 +1,5 @@
 class Incrementor
-    attr_reader :result
-    attr_accessor :owner
+    attr_reader :result, :owner
 
     def initialize(owner=false)
         @owner = owner
