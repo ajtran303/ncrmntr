@@ -1,6 +1,6 @@
 # ncrmntr.rb
 
-[![Run on Repl.it](https://repl.it/badge/github/ajtran303/ncrmntr)](https://repl.it/github/ajtran303/ncrmntr)
+Click here to check it out--> [![Run on Repl.it](https://repl.it/badge/github/ajtran303/ncrmntr)](https://repl.it/github/ajtran303/ncrmntr)
 
 ## A simple adding calculator
 
