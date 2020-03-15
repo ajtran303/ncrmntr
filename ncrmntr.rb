@@ -1,7 +1,7 @@
 class Incrementor
     attr_reader :result, :owner
 
-    def initialize(owner=false)
+    def initialize(owner=nil)
         @owner = owner
         @result = 0
         puts "#{@owner} just got a spiffy new incrementor!" if @owner
