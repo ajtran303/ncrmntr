@@ -1,5 +1,7 @@
 # ncrmntr.rb
 
+[![Run on Repl.it](https://repl.it/badge/github/ajtran303/ncrmntr)](https://repl.it/github/ajtran303/ncrmntr)
+
 ## A simple adding calculator
 
 This program demonstrates basic Object-Oriented design.
