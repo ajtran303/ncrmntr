@@ -1,3 +1,12 @@
+# THINGS TO DO?
+# Maybe there should be an Owner class?
+# That was, the Incrementor just focuses on number stuff
+
+# Overall this program can be broken down and expanded....
+# Like a weird text-based world of people owning or not owning calculators
+# Their calculators can only do simple mundane things until they upgrade them?
+# Just wondering...
+
 class Incrementor
     attr_reader :result, :owner
 
@@ -6,7 +15,7 @@ class Incrementor
         @result = 0
         puts "#{@owner} just got a spiffy new incrementor!" if @owner
         puts "The incrementor turns on and the display reads '#{@result}'."
-        puts "#{owner} is bledatadated about it!" if @owner 
+        puts "#{owner} is bledatadated about it!" if @owner
         puts "It did that by itself. Spookduculous!" unless @owner
         puts
     end
@@ -46,20 +55,3 @@ class Incrementor
         puts
     end
 end
-
-calc_sara = Incrementor.new("Sara")
-
-calc_sara.belongs_to
-calc_sara.give_to("Lara")
-calc_sara.belongs_to
-calc_sara.show
-5.times {calc_sara.add_one}
-calc_sara.show
-calc_sara.clear
-
-calc_nobody = Incrementor.new
-calc_nobody.belongs_to
-calc_nobody.give_to("Sara")
-calc_nobody.add_one
-calc_nobody.add_one
-calc_nobody.show
