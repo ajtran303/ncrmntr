@@ -35,7 +35,7 @@ class Ncrmntr
 
   def who_is
     if haunted?
-      "BOO"
+      "👻 B O O O O O 👻"
     else
       "This belongs to #{@name}"
     end

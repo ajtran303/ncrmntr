@@ -34,7 +34,7 @@ class NcrmntrTest < Minitest::Test
 
   def test_BOO_if_belongs_to_nobody
     ncrmntr = Ncrmntr.new
-    assert_equal "BOO", ncrmntr.owner
+    assert_equal "👻 B O O O O O 👻", ncrmntr.owner
   end
 
   def test_default_result_is_0
@@ -104,6 +104,14 @@ class NcrmntrTest < Minitest::Test
     assert_equal 0, ncrmntr.display_result
     100.times {ncrmntr.add}
     assert_equal -100, ncrmntr.display_result
+  end
+
+  def test_it_can_become_haunted
+    ncrmntr = Ncrmntr.new("Hrafn")
+    assert_equal "Hrafn", ncrmntr.name
+    ncrmntr.name = nil
+    assert_nil ncrmntr.name
+    assert_equal "👻 B O O O O O 👻", ncrmntr.owner
   end
 
 end
