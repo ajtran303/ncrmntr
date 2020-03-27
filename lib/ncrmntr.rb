@@ -6,20 +6,12 @@ class Ncrmntr
     @result = start_result
   end
 
-  def haunted?
-    @name == ""
-  end
-
   def owner
     if haunted?
       "BOO"
     else
       "This belongs to #{@name}"
     end
-  end
-
-  def start_result
-    0
   end
 
   def display_result
@@ -32,6 +24,16 @@ class Ncrmntr
 
   def clear
     @result = start_result
+  end
+
+  private
+
+  def start_result
+    0
+  end
+
+  def haunted?
+    @name == ""
   end
 
 end
