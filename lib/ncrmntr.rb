@@ -1,21 +1,18 @@
 class Ncrmntr
-  attr_reader :name, :result
+  attr_reader :result
+  attr_accessor :name
 
-  def initialize(name="")
-    @name = name.to_s
+  def initialize(name=nil)
+    @name = validate(name)
     @result = start_result
   end
 
   def owner
-    if haunted?
-      "BOO"
-    else
-      "This belongs to #{@name}"
-    end
+    who_is
   end
 
   def display_result
-    @result
+    calculate
   end
 
   def add
@@ -28,12 +25,32 @@ class Ncrmntr
 
   private
 
+  def validate(name)
+    name.to_s unless name == nil
+  end
+
+  def haunted?
+    !@name
+  end
+
+  def who_is
+    if haunted?
+      "BOO"
+    else
+      "This belongs to #{@name}"
+    end
+  end
+
   def start_result
     0
   end
 
-  def haunted?
-    @name == ""
+  def calculate
+    if haunted?
+      @result * -1
+    else
+      @result
+    end
   end
 
 end

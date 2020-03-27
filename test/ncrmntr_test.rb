@@ -5,9 +5,9 @@ require_relative '../lib/ncrmntr'
 
 class NcrmntrTest < Minitest::Test
 
-  def test_it_can_have_no_name
+  def test_it_can_have_no_name_return_nil
     ncrmntr = Ncrmntr.new
-    assert_equal "", ncrmntr.name
+    assert_nil ncrmntr.name
   end
 
   def test_it_can_have_a_name
@@ -43,13 +43,13 @@ class NcrmntrTest < Minitest::Test
   end
 
   def test_result_can_be_incremented
-    ncrmntr = Ncrmntr.new
+    ncrmntr = Ncrmntr.new("Hrafn")
     ncrmntr.add
     assert_equal 1, ncrmntr.display_result
   end
 
   def test_result_can_be_incremented_a_lot
-    ncrmntr = Ncrmntr.new
+    ncrmntr = Ncrmntr.new("Hrafn")
     100.times { ncrmntr.add }
     assert_equal 100, ncrmntr.display_result
   end
@@ -62,15 +62,48 @@ class NcrmntrTest < Minitest::Test
   end
 
   def test_start_result_method_private
+    skip
     ncrmntr = Ncrmntr.new
     # ncrmntr.start_result
     # NoMethodError: private method
   end
 
   def test_haunted_method_private
+    skip
     ncrmntr = Ncrmntr.new
     # assert_nil ncrmntr.haunted?
     # NoMethodError: private method
+  end
+
+  def test_who_is_method_private
+    skip
+    ncrmntr = Ncrmntr.new
+    # assert_nil ncrmntr.who_is
+    # NoMethodError: private method
+  end
+
+  def test_it_can_have_a_name_after_starting_without
+    ncrmntr = Ncrmntr.new
+    assert_nil ncrmntr.name
+    ncrmntr.name = "Hrafn"
+    assert_equal "Hrafn", ncrmntr.name
+  end
+
+  def test_it_can_be_renamed
+    ncrmntr = Ncrmntr.new("Hrafn")
+    assert_equal "Hrafn", ncrmntr.name
+    ncrmntr.name = "Hrafnhildur"
+    assert_equal "Hrafnhildur", ncrmntr.name
+  end
+
+  def test_haunted_calculators_display_negative_results
+    ncrmntr = Ncrmntr.new
+    ncrmntr.add
+    assert_equal -1, ncrmntr.display_result
+    ncrmntr.clear
+    assert_equal 0, ncrmntr.display_result
+    100.times {ncrmntr.add}
+    assert_equal -100, ncrmntr.display_result
   end
 
 end
