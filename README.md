@@ -29,7 +29,7 @@ spooky_calc.name # => nil
 spooky_calc.owner # => "👻 B O O O O O 👻"
 ```
 
-*A haunted Ncrmntr will display negative results.*
+**A haunted Ncrmntr will display negative results.**
 
 ```ruby
 rip_calc = Ncrmntr.new("RIP")
